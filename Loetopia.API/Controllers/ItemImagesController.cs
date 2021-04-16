@@ -2,47 +2,49 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Loetopia.DataAccess.Models;
 using Loetopia.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loetopia.API.Controllers.Items
+namespace Loetopia.API.Controllers
 {
-    [Route("api/items/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class ItemAttributeController : ControllerBase
+    public class ItemImagesController : ControllerBase
     {
-        private IItemAttributes _item;
-        public ItemAttributeController(IItemAttributes item)
+        private IItemImages _items;
+        public ItemImagesController(IItemImages items)
         {
-            _item = item;
+            _items = items;
         }
 
 
+        // GET: api/ItemImages
         [HttpGet]
-        public IEnumerable<ItemsAttributes> Get()
+        public IEnumerable<byte[]> Get()
         {
-            return _item.GetItemsAttributes(null);
+            return _items.GetItemsImages(null);
         }
 
-        // GET: api/ItemAttribute
+        // GET: api/ItemImages/5
         [HttpGet("{id}")]
-        public IEnumerable<ItemsAttributes> Get(int id)
+        public IEnumerable<byte[]> Get(int id)
         {
-            return _item.GetItemsAttributes(id);
+            return _items.GetItemsImages(id);
         }
 
-        // POST: api/ItemAttribute
+        // POST: api/ItemImages
         [HttpPost]
         public void Post([FromBody] string value)
         {
+ 
         }
 
-        // PUT: api/ItemAttribute/5
+        // PUT: api/ItemImages/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+            
         }
 
         // DELETE: api/ApiWithActions/5

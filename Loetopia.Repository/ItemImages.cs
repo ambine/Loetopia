@@ -13,7 +13,7 @@ namespace Loetopia.Repository
         {
             using (var db = new LoetopiaContext())
             {
-                return db.ItemImages.Where(x => id == null || x.ItemImagesId == id).Select(x => x.Image).ToList();
+                return db.ItemImages.Where(x => id == null || x.ItemImageId == id).Select(x => x.Image).ToList();
             }
         }
 

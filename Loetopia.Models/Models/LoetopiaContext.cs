@@ -26,7 +26,7 @@ namespace Loetopia.DataAccess
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                @"Server=ambine;Database=Loetopia;Integrated Security=True");
+                @"Server=localhost;Database=Loetopia;Integrated Security=True");
             }
         }
 
@@ -74,7 +74,7 @@ namespace Loetopia.DataAccess
 
             modelBuilder.Entity<ItemImage>(entity =>
             {
-                entity.HasKey(e => e.ItemImagesId);
+                entity.HasKey(e => e.ItemImageId);
 
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.ItemImages)

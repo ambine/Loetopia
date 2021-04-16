@@ -7,9 +7,9 @@ using Loetopia.DataAccess.Models;
 using Loetopia.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Loetopia.API.Controllers.Items
+namespace Loetopia.API.Controllers
 {
-    [Route("api/items/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ItemController : ControllerBase
     {

@@ -5,7 +5,7 @@ namespace Loetopia.DataAccess
 {
     public partial class ItemImage
     {
-        public int ItemImagesId { get; set; }
+        public int ItemImageId { get; set; }
         public int? ItemId { get; set; }
         public byte[] Image { get; set; }
 
